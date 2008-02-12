@@ -13,7 +13,6 @@ BuildRequires:	perl-devel
 BuildArch: noarch
 
 %description
-
 This module implements a Perl profiler that outputs profiling data in
 a format compatible with "dprofpp", Devel::DProf's profile analysis
 tool.  It is meant to be a drop-in replacement for Devel::DProf.
