@@ -2,7 +2,7 @@
 
 Name:		perl-%{realname}
 Version:    0.04
-Release:    %mkrel 2
+Release:    %mkrel 4
 License:	GPL and Artistic
 Group:		Development/Perl
 Summary:    A Perl profiler compatible with dprofpp  
