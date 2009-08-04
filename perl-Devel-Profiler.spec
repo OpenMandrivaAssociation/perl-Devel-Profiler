@@ -1,16 +1,18 @@
-%define realname   Devel-Profiler
+%define upstream_name    Devel-Profiler
+%define upstream_version 0.04
 
-Name:		perl-%{realname}
-Version:    0.04
-Release:    %mkrel 4
-License:	GPL and Artistic
-Group:		Development/Perl
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:    A Perl profiler compatible with dprofpp  
-Source0:    http://search.cpan.org/CPAN/authors/id/S/SA/SAMTREGAR/Devel-Profiler-%{version}.tar.bz2
-Url:		http://search.cpan.org/dist/%{realname}
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	perl-devel
+License:	GPL+ and Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://search.cpan.org/CPAN/authors/id/S/SA/SAMTREGAR/Devel-Profiler-%{upstream_version}.tar.bz2
+
 BuildArch: noarch
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module implements a Perl profiler that outputs profiling data in
@@ -22,9 +24,11 @@ reason to use this module.
 
 
 %prep
-%setup -q -n Devel-Profiler-%{version} 
+%setup -q -n Devel-Profiler-%{upstream_version}
 # broken http://rt.cpan.org/Public/Bug/Display.html?id=7400
-rm -f t/01basic.t
+rm -f t/01basic.t 
+# broken due to 5.10 - http://rt.cpan.org/Public/Bug/Display.html?id=34214
+rm -f t/07constants.t  t/09fcntl.t 
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -45,4 +49,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc README Changes
 %{perl_vendorlib}/*
 %{_mandir}/man3/*
-
