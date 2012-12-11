@@ -51,3 +51,31 @@ rm -rf $RPM_BUILD_ROOT
 %doc README Changes
 %{perl_vendorlib}/*
 %{_mandir}/man3/*
+
+
+%changelog
+* Sat Apr 16 2011 Funda Wang <fwang@mandriva.org> 0.40.0-2mdv2011.0
++ Revision: 653408
+- rebuild for updated spec-helper
+
+* Tue Aug 04 2009 Jérôme Quelin <jquelin@mandriva.org> 0.40.0-1mdv2011.0
++ Revision: 408771
+- adding missing buildrequires:
+- rebuild using %%perl_convert_version
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - rebuild
+    - fix spacing at top of description
+    - kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Thu Jun 21 2007 Michael Scherer <misc@mandriva.org> 0.04-2mdv2008.0
++ Revision: 41991
+- rebuild
+
+
+* Sat Feb 04 2006 Michael Scherer <misc@mandriva.org> 0.04-1mdk
+- First Mandriva package, fix #21014
+
