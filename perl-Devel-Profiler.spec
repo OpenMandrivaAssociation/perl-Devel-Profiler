@@ -8,7 +8,7 @@ Release:    4
 Summary:    A Perl profiler compatible with dprofpp  
 License:	GPL+ and Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:    http://search.cpan.org/CPAN/authors/id/S/SA/SAMTREGAR/Devel-Profiler-%{upstream_version}.tar.bz2
 
 # needed for dprofpp
