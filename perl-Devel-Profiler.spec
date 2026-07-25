@@ -2,14 +2,14 @@
 %define upstream_version 0.04
 
 Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    4
+Version:    %{upstream_version}
+Release:    5
 
 Summary:    A Perl profiler compatible with dprofpp  
 License:	GPL+ and Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:    http://search.cpan.org/CPAN/authors/id/S/SA/SAMTREGAR/Devel-Profiler-%{upstream_version}.tar.bz2
+Url:		https://metacpan.org/dist/Devel-Profiler
+Source0:    https://cpan.metacpan.org/authors/id/S/SA/SAMTREGAR/Devel-Profiler-%{upstream_version}.tar.gz
 
 # needed for dprofpp
 BuildRequires:	make
