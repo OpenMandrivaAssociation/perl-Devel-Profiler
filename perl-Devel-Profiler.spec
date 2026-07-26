@@ -1,15 +1,13 @@
 %define upstream_name    Devel-Profiler
-%define upstream_version 0.04
-
 Name:       perl-%{upstream_name}
-Version:    %{upstream_version}
-Release:    5
+Version:    0.04
+Release:    6
 
 Summary:    A Perl profiler compatible with dprofpp  
 License:	GPL+ and Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Devel-Profiler
-Source0:    https://cpan.metacpan.org/authors/id/S/SA/SAMTREGAR/Devel-Profiler-%{upstream_version}.tar.gz
+Source0:    https://cpan.metacpan.org/authors/id/S/SA/SAMTREGAR/Devel-Profiler-%{version}.tar.gz
 
 # needed for dprofpp
 BuildRequires:	make
@@ -27,7 +25,7 @@ reason to use this module.
 
 
 %prep
-%setup -q -n Devel-Profiler-%{upstream_version}
+%setup -q -n Devel-Profiler-%{version}
 # broken http://rt.cpan.org/Public/Bug/Display.html?id=7400
 rm -f t/01basic.t 
 # broken due to 5.10 - http://rt.cpan.org/Public/Bug/Display.html?id=34214
@@ -62,9 +60,7 @@ rm -rf $RPM_BUILD_ROOT
 * Tue Aug 04 2009 Jérôme Quelin <jquelin@mandriva.org> 0.40.0-1mdv2011.0
 + Revision: 408771
 - adding missing buildrequires:
-- rebuild using %%perl_convert_version
-
-  + Thierry Vignaud <tv@mandriva.org>
+- rebuild using %0.04 Thierry Vignaud <tv@mandriva.org>
     - rebuild
     - fix spacing at top of description
     - kill re-definition of %%buildroot on Pixel's request
